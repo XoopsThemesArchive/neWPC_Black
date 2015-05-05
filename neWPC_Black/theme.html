@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+<Script>
+function MM_controlSound(x, _sndObj, sndFile) {
+var i, method = "", sndObj = eval(_sndObj);
+if (sndObj != null) {
+if (navigator.appName == 'Netscape') method = "play";
+else {
+if (window.MM_WMP == null) {
+window.MM_WMP = false;
+for(i in sndObj) if (i == "ActiveMovie") {
+window.MM_WMP = true; break;
+} }
+if (window.MM_WMP) method = "play";
+else if (sndObj.FileName) method = "run";
+} }
+if (method) eval(_sndObj+"."+method+"()");
+else window.location = sndFile;
+}
+</Script>
+
+</head>
+<body>
+  <table cellspacing="0">
+    <tr id="header">
+      <td id="headerlogo"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>pictures/logo.jpg" width="148" height="80" alt="new Wolf Pack Clan" align="center"/></a></td>
+      <td id="headerbanner"><{$xoops_banner}></td>
+      <td id="headerlogo"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>pictures/moon.gif" width="80" height="80" alt="Howl to the moon..." align="center"></a></td>
+    </tr>
+    <tr>
+      <td id="headerbar" colspan="3">&nbsp;<p></td>
+    </tr>
+  </table>
+<td>
+  <table cellspacing="0">
+    <tr>
+      <td id="leftcolumn">
+        <!-- Start left blocks loop -->
+        <{foreach item=block from=$xoops_lblocks}>
+          <{include file="default/theme_blockleft.html"}>
+        <{/foreach}>
+        <!-- End left blocks loop -->
+
+      </td>
+
+      <td id="centercolumn">
+
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}>
+
+        <table cellspacing="0">
+    <tr> <td align="center" colspan="2">
+      <embed name='MM_playSound' src='<{$xoops_imageurl}>sound/wolf.wav' loop=false autostart=false mastersound='mastersound' hidden=true volume=100 width=0 height=0></embed> 
+<a href="#" onclick="MM_controlSound('play', 'document.MM_playSound', '<{$xoops_imageurl}>sound/wolf.wav');"><img src="<{$xoops_imageurl}>pictures/eyes.gif" width="100" height="50" alt="Howl to the moon..." /></a><p>
+	</td>
+    </tr>
+          <tr>
+            <td id="centerCcolumn" colspan="2">
+            <!-- Start center-center blocks loop -->
+            <{foreach item=block from=$xoops_ccblocks}>
+              <{include file="default/theme_blockcenter_c.html"}>
+            <{/foreach}>
+            <!-- End center-center blocks loop -->
+
+            </td>
+          </tr>
+          <tr>
+            <td id="centerLcolumn">
+
+            <!-- Start center-left blocks loop -->
+              <{foreach item=block from=$xoops_clblocks}>
+                <{include file="default/theme_blockcenter_l.html"}>
+              <{/foreach}>
+            <!-- End center-left blocks loop -->
+
+            </td><td id="centerRcolumn">
+
+            <!-- Start center-right blocks loop -->
+              <{foreach item=block from=$xoops_crblocks}>
+                <{include file="default/theme_blockcenter_r.html"}>
+              <{/foreach}>
+            <!-- End center-right blocks loop -->
+
+            </td>
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+
+        <div id="content">
+          <{$xoops_contents}>
+        </div>
+      </td>
+
+      <{if $xoops_showrblock == 1}>
+
+      <td id="rightcolumn">
+        <!-- Start right blocks loop -->
+        <{foreach item=block from=$xoops_rblocks}>
+          <{include file="default/theme_blockright.html"}>
+        <{/foreach}>
+        <!-- End right blocks loop -->
+      </td>
+
+      <{/if}>
+
+    </tr>
+  </table>
+
+<table border="1" width="100%" cellspacing="0" cellpadding="0">
+        <tr> 
+          	<td align="center" id="footer"><br /><span class="copyright"><{$xoops_footer}><br />
+	    	Design : Solo <a href="http://www.wolfpackclan.com" target="_blank">-> new Wolf Pack Clan <-</a></span>
+	    		<p>
+		</td>
+        </tr>
+            </table>
+</body>
+</html>
